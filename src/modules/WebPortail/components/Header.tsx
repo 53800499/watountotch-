@@ -4,6 +4,9 @@ import { Image } from "../../../common/components/Image";
 import { Link, useLocation } from "react-router-dom";
 import { BRAND_LOGO_COLORED } from "../../../assets/images";
 import { WORDS } from "../../../common/constants/wording";
+import { NAV_ITEMS } from "../../../common/mocks";
+
+type HeaderNavItem = (typeof NAV_ITEMS)[number];
 
 export const Header = (): React.JSX.Element => {
   const [scrolled, setScrolled] = useState(false); // pour background
@@ -54,7 +57,7 @@ export const Header = (): React.JSX.Element => {
         {/* Navigation */}
         <nav className="navbar" id="navbar">
           <ul className="nav-menu">
-            {WORDS.header.nav_items.map((item, index) => (
+            {WORDS.header.nav_items.map((item: HeaderNavItem, index: number) => (
               <li
                 key={index}
                 className={`${item.dropdown ? "dropdown" : ""} ${

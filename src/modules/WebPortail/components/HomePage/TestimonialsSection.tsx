@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import { WORDS } from "../../../../common/constants/wording";
 import { Image } from "../../../../common/components/Image";
 import {

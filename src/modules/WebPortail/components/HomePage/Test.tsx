@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import { Image } from "../../../../common/components/Image";
 import { GENERIC_HERO_TOURS_BACKGROUND } from "../../../../assets/images";
 

@@ -1,6 +1,6 @@
 /** @format */
 
-import { PageHeader, WrapperSection } from "../components";
+import { PageHeader } from "../components";
 import { DestinationDetailContainer } from "../components/DestinationDetailPage";
 import { useParams } from "react-router-dom";
 import { STORIES_HEADER_SLIDES } from "../../../common/mocks";

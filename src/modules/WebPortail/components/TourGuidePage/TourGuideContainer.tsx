@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import { WORDS } from "../../../../common/constants/wording";
 import { TourGuideCard } from "./TourGuideCard";
 import { tourGuideCardsData } from "../../../../common/mocks/tourGuideData";

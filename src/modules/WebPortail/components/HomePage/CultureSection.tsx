@@ -1,4 +1,3 @@
-import React from "react";
 import { WORDS } from "../../../../common/constants/wording";
 import { CULTURE_ITEMS_MOCK } from "../../../../common/mocks/home_page";
 

@@ -1,5 +1,5 @@
-export {HeroSection} from "./HeroSection";
-export { HeroSlider } from "./HeroSlider";
+// export {HeroSection} from "./HeroSection";
+// export { HeroSlider } from "./HeroSlider";
 export { OurExperienceSection } from "./OurExperienceSection";
 // export { Tours } from "./GastronomySection";
 export { CallActionSection } from "./CallActionSection";

@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import type { TourCardInterface } from "../../interfaces/TourCardInterface";
 import { Image } from "../../../../common/components/Image";
 import { Link } from "react-router-dom";

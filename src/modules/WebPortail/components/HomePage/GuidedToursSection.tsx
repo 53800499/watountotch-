@@ -1,4 +1,3 @@
-import React from 'react'
 import GuidedToursCard from './GuidedToursCard';
 import { guidedTours } from "../../../../common/mocks/guidedTours";
 import { WORDS } from "../../../../common/constants/wording";

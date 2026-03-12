@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import { Image } from "../../../../common/components/Image";
 import {
   BLOG_AUTHOR_AVATAR_AMANDA,

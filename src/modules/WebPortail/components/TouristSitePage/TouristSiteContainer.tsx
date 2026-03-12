@@ -1,7 +1,5 @@
-import React from 'react'
 import { tours } from '../../../../common/mocks';
 import TourCard from '../HomePage/TouristSiteCard';
-import { Link } from "react-router-dom";
 import { WORDS } from "../../../../common/constants/wording";
 
 export const TouristSiteContainer = () => {

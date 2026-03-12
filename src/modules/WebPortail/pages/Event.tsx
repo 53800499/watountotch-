@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import { HeroSection, WrapperSection } from "../components";
 import { EventContainer } from "../components/EventPage/EventContainer";
 import { EVENT_PAGE_HERO_BACKGROUND_NEWS } from "../../../assets/images";

@@ -1,15 +1,13 @@
 /** @format */
 
-import { WORDS } from "../../../../common/constants/wording";
+// import { HeroSlider } from ".";
+/* import { WORDS } from "../../../../common/constants/wording";
 import { slides } from "../../../../common/mocks/heroSection";
-import { HeroSlider } from "./HeroSlider";
 
 export const HeroSection = () => {
   
   return (
-    // <!-- Slide Hero -->
     <div className="hero-container">
-      {/* <!-- Only visible to SEO search engines --> */}
       <h1 className="visually-hidden">
         {WORDS.home_page.hero_section.title}
       </h1>
@@ -28,4 +26,4 @@ export const HeroSection = () => {
       </div>
     </div>
   );
-};
+}; */

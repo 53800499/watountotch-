@@ -1,6 +1,5 @@
 /** @format */
 
-import React from "react";
 import type { Slide } from "../../interfaces/HeroSection";
 
 export default function Thumbnails({

@@ -118,7 +118,7 @@ export default function SlideHero({ slides: initSlides, config = {} }: Props) {
   }, [startAutoplay, stopAutoplay, cfg.autoplay?.enabled]);
 
   // --- Thumbnail cycling animation ---
-  const cycleThumbnail = async (/* index: number, */ forward = true) => {
+  const cycleThumbnail = async (_index: number, forward = true) => {
     const container = thumbnailsRef.current;
     if (!container || container.children.length <= 1) return;
 
@@ -237,7 +237,7 @@ export default function SlideHero({ slides: initSlides, config = {} }: Props) {
   // --- renderThumbnail ---
   const renderThumbnail = (
     slide: Slide,
-    idx: number,
+    // idx: number,
     originalIndex: number
   ) => {
     const [src, setSrc] = useState<string>(slide.image || "");
@@ -314,8 +314,8 @@ export default function SlideHero({ slides: initSlides, config = {} }: Props) {
 
             <div className="box-slide-images">
               <div className="box-image" ref={thumbnailsRef}>
-                {thumbnailsOrder.map((t, i) =>
-                  renderThumbnail(t, i, findOriginalIndex(t))
+                {thumbnailsOrder.map((t) =>
+                  renderThumbnail(t, findOriginalIndex(t))
                 )}
               </div>
 

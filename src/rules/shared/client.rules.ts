@@ -1,4 +1,4 @@
-import type { Rule } from "../ruleEngine";
+/* import type { Rule } from "../ruleEngine";
 import { ClientType, type Clients } from "../../../../common/models";
 
 export const ClientsRules: Rule<Clients>[] = [
@@ -15,3 +15,4 @@ export const ClientsRules: Rule<Clients>[] = [
         evaluate: (Clients) => Object.values(ClientType).includes(Clients.type_client)
     },
 ];
+ */

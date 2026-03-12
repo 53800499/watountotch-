@@ -1,15 +1,11 @@
 /** @format */
 
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import { WrapperSection } from "../components";
 import {
   CallActionSection,
-  CulturalEventsSection,
   GuidedToursSection,
-  OurExperienceSection,
   TestimonialsSection,
-  GastronomySection,
-  TouristSitesSection,
   // SeachSection,
   HistoireSection,
   SeachSection
@@ -22,7 +18,6 @@ import {
   BACKGROUND_STORY_A,
   BACKGROUND_STORY_B,
   BACKGROUND_STORY_C,
-  GANI
 } from "../../../assets/images";
 import SlideHero from "../components/HomePage/SlideHero";
 import { DestinationSection } from "../components/HomePage/DestinationSection";
