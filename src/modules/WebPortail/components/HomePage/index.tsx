@@ -1,0 +1,12 @@
+export {HeroSection} from "./HeroSection";
+export { HeroSlider } from "./HeroSlider";
+export { OurExperienceSection } from "./OurExperienceSection";
+// export { Tours } from "./GastronomySection";
+export { CallActionSection } from "./CallActionSection";
+export { TestimonialsSection } from "./TestimonialsSection";
+export { GuidedToursSection } from "./GuidedToursSection";
+export { CulturalEventsSection } from "./CulturalEventsSection";
+export { GastronomySection } from "./GastronomySection";
+export { TouristSitesSection } from "./TouristSitesSection";
+export {SeachSection} from "./SeachSection";
+export {HistoireSection} from "./HistoireSection";

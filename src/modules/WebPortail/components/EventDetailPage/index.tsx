@@ -1,0 +1,1 @@
+export {EventDetailContainer} from "./EventDetailContainer";
