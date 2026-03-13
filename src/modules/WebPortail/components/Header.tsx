@@ -182,7 +182,7 @@ export const Header = (): React.JSX.Element => {
                             aria-selected={language === code}
                           >
                             <span className="lang-option-code">
-                              {code.toUpperCase()}cool
+                              {code.toUpperCase()}
                             </span>
                             <span className="lang-option-label">
                               {languageLabel[code]}
