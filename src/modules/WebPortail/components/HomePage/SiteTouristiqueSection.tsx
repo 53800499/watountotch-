@@ -1,5 +1,6 @@
 /** @format */
 
+import { Button } from "../../../../common/components";
 import { WORDS } from "../../../../common/constants/wording";
 import { TOURISTIC_SITES_MOCK } from "../../../../common/mocks/home_page";
 
@@ -31,12 +32,15 @@ export const SiteTouristiqueSection = () => {
             <div className="history-text">
               <h3>{site.title}</h3>
               <p>{site.description}</p>
-
-              <a
-                href={site.href ?? "#"}
-                className="btn animated-btn text-black">
-                {site.buttonLabel}
-              </a>
+              <Button
+                className="btn animated-btn text-black"
+                style={{ flex: 1 }}>
+                <a
+                  href={site.href ?? "#"}
+                  className="text-white">
+                  {site.buttonLabel}
+                </a>
+              </Button>
             </div>
           );
 
@@ -65,9 +69,11 @@ export const SiteTouristiqueSection = () => {
         })}
 
         <div className="d-flex justify-center">
-          <a href="/sites-touristiques" className="btn animated-btn text-black">
-            {button_text}
-          </a>
+          <Button className="btn animated-btn text-black" style={{ flex: 1 }}>
+            <a href="/sites-touristiques" className="text-white">
+              {button_text}
+            </a>
+          </Button>
         </div>
       </section>
     </>

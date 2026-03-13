@@ -2,6 +2,7 @@ import { useState } from "react";
 import { WORDS } from "../../../../common/constants/wording";
 import { CULTURE_DISHES_MOCK, type CultureDishBadgeVariant } from "../../../../common/mocks/home_page";
 import { ModalRecette } from "../CultureAndGastronomy/ModalRecette";
+import { Button } from "../../../../common/components";
 
 export const CultureGastroSection = () => {
   const { title, subtitle } = WORDS.home_page.gastronomy_section;
@@ -77,13 +78,13 @@ export const CultureGastroSection = () => {
                 </p>
 
                 <div className="text-start">
-                  <button
+                  <Button
                     className="btn animated-btn text-black"
                     style={{ flex: 1, }}
                     onClick={() => setOpen(true)}
                   >
                     Voir Recette
-                  </button>
+                  </Button>
                 </div>
               </div>
             </div>

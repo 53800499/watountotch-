@@ -4,6 +4,7 @@ import TourCard from "./TouristSiteCard";
 import { tours } from "../../../../common/mocks/touristSite";
 import { WORDS } from "../../../../common/constants/wording";
 import { Link } from "react-router-dom";
+import { Button } from "../../../../common/components";
 
 export const TouristSitesSection = () => {
   const gridStyles = {
@@ -43,9 +44,11 @@ export const TouristSitesSection = () => {
 
           {/* <!-- Load More Button --> */}
           <div className="text-center pt-5" data-aos="fade-down">
+            <Button className="btn animated-btn text-black" style={{ flex: 1 }}>
             <Link to="/sites-touristiques" className="btn btn-more">
               {WORDS.home_page.tourist_sites_section.button_text}
             </Link>
+          </Button>
           </div>
         </section>
       </div>
