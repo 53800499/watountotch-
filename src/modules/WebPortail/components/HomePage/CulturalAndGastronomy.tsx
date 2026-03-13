@@ -29,7 +29,7 @@ export const CultureGastroSection = () => {
         </div>
 
         <div className="culture-tabs">
-          <button className="tab-btn active">Gastronomie</button>
+          <button className="tab-btn active text-white">Gastronomie</button>
           <button className="tab-btn inactive">Arts & Rites</button>
           <button className="tab-btn inactive">Communauté</button>
         </div>
@@ -76,10 +76,10 @@ export const CultureGastroSection = () => {
                   {dish.description}
                 </p>
 
-                <div className="food-actions">
+                <div className="text-start">
                   <button
                     className="btn-outline2"
-                    style={{ flex: 1, fontSize: "12px" }}
+                    style={{ flex: 1, }}
                     onClick={() => setOpen(true)}
                   >
                     Voir Recette

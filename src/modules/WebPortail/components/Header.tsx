@@ -51,7 +51,7 @@ export const Header = (): React.JSX.Element => {
         {/* Logo */}
         <div className="logo position-relative">
           <Image className="image" src={BRAND_LOGO_COLORED} alt="Logo" />
-          <Link to="/accueil" className="overlay-link"></Link>
+          <Link to="/accueil" className=""></Link>
         </div>
 
         {/* Navigation */}

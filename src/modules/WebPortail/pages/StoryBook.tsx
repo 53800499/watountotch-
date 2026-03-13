@@ -5,8 +5,6 @@ import { Timeline } from "../components/StoriesPage/Timeline";
 import { AudioLines } from "lucide-react";
 import { timelineData } from "../../../common/mocks";
 
-
-
 export const StoryBook: React.FC<StoryBookProps> = ({
   story,
   chapterIndex,
@@ -14,29 +12,114 @@ export const StoryBook: React.FC<StoryBookProps> = ({
   pageIndex,
   setPageIndex
 }) => {
+  const pageContainerRef = React.useRef<HTMLElement | null>(null);
+  const pageBodyRef = React.useRef<HTMLDivElement | null>(null);
   const [showTimelineModal, setShowTimelineModal] = React.useState(false);
   const [showChaptersModal, setShowChaptersModal] = React.useState(false);
+  const [pageFlip, setPageFlip] = React.useState<{
+    direction: "next" | "prev";
+    toChapterIndex: number;
+    toPageIndex: number;
+    from: { content: string; title?: string; image?: string };
+    to: { content: string; title?: string; image?: string };
+  } | null>(null);
 
   const chapter = story.chapters[chapterIndex];
   const currentPage = chapter.pages[pageIndex] ?? chapter.pages[0];
 
-  const nextPage = () => {
-    if (pageIndex < chapter.pages.length - 1) {
-      setPageIndex(pageIndex + 1);
-    } else if (chapterIndex < story.chapters.length - 1) {
-      setChapterIndex(chapterIndex + 1);
-      setPageIndex(0);
+  React.useEffect(() => {
+    if (pageFlip) return;
+    const el = pageContainerRef.current;
+    const bodyEl = pageBodyRef.current;
+
+    if (el) {
+      try {
+        el.scrollTo({ top: 0, behavior: "smooth" });
+      } catch {
+        (el as HTMLElement).scrollTop = 0;
+      }
     }
+
+    if (bodyEl) {
+      try {
+        bodyEl.scrollTo({ top: 0, behavior: "smooth" });
+      } catch {
+        bodyEl.scrollTop = 0;
+      }
+    }
+  }, [story.id, chapterIndex, pageIndex, pageFlip]);
+
+  const resolveTarget = (direction: "next" | "prev") => {
+    if (direction === "next") {
+      if (pageIndex < chapter.pages.length - 1) {
+        return { toChapterIndex: chapterIndex, toPageIndex: pageIndex + 1 };
+      }
+      if (chapterIndex < story.chapters.length - 1) {
+        return { toChapterIndex: chapterIndex + 1, toPageIndex: 0 };
+      }
+      return null;
+    }
+
+    // prev
+    if (pageIndex > 0) {
+      return { toChapterIndex: chapterIndex, toPageIndex: pageIndex - 1 };
+    }
+    if (chapterIndex > 0) {
+      const prevChapter = story.chapters[chapterIndex - 1];
+      return {
+        toChapterIndex: chapterIndex - 1,
+        toPageIndex: prevChapter.pages.length - 1
+      };
+    }
+    return null;
+  };
+
+  React.useEffect(() => {
+    if (!pageFlip) return;
+    const t = window.setTimeout(() => {
+      setChapterIndex(pageFlip.toChapterIndex);
+      setPageIndex(pageFlip.toPageIndex);
+      setPageFlip(null);
+    }, 650);
+    return () => window.clearTimeout(t);
+  }, [pageFlip, setChapterIndex, setPageIndex]);
+
+  const nextPage = () => {
+    if (pageFlip) return;
+    const target = resolveTarget("next");
+    if (!target) return;
+    const nextChapter = story.chapters[target.toChapterIndex];
+    const next = nextChapter.pages[target.toPageIndex] ?? nextChapter.pages[0];
+    setPageFlip({
+      direction: "next",
+      toChapterIndex: target.toChapterIndex,
+      toPageIndex: target.toPageIndex,
+      from: {
+        content: currentPage.content,
+        title: currentPage.title,
+        image: currentPage.image
+      },
+      to: { content: next.content, title: next.title, image: next.image }
+    });
   };
 
   const prevPage = () => {
-    if (pageIndex > 0) {
-      setPageIndex(pageIndex - 1);
-    } else if (chapterIndex > 0) {
-      const prevChapter = story.chapters[chapterIndex - 1];
-      setChapterIndex(chapterIndex - 1);
-      setPageIndex(prevChapter.pages.length - 1);
-    }
+    if (pageFlip) return;
+    const target = resolveTarget("prev");
+    if (!target) return;
+    const prevChapter = story.chapters[target.toChapterIndex];
+    const prev = prevChapter.pages[target.toPageIndex] ?? prevChapter.pages[0];
+    setPageFlip({
+      direction: "prev",
+      toChapterIndex: target.toChapterIndex,
+      toPageIndex: target.toPageIndex,
+      from: {
+        content: currentPage.content,
+        title: currentPage.title,
+        image: currentPage.image
+      },
+      to: { content: prev.content, title: prev.title, image: prev.image }
+    });
   };
 
   const timelineItems = story.chapters.map((ch, i) => ({
@@ -73,7 +156,12 @@ export const StoryBook: React.FC<StoryBookProps> = ({
           Temps forts
         </button>
       </div>
-      <section className="story-book-page">
+      <section
+        className="story-book-page"
+        ref={(el) => {
+          pageContainerRef.current = el;
+        }}
+      >
         <div className="story-book-page-inner">
           <header className="story-book-page-header">
             <p className="story-book-page-meta">
@@ -82,14 +170,50 @@ export const StoryBook: React.FC<StoryBookProps> = ({
             {currentPage.title && <h3>{currentPage.title}</h3>}
           </header>
 
-          <div className="story-book-page-body">
-            <p>{currentPage.content}</p>
-            {currentPage.image && (
-              <img
-                src={currentPage.image}
-                alt={currentPage.title || "Story page image"}
-                className="story-page-image"
-              />
+          <div
+            className={`story-book-page-body ${
+              pageFlip ? `story-book-page-body--flip-${pageFlip.direction}` : ""
+            }`}
+            ref={pageBodyRef}
+          >
+            {pageFlip ? (
+              <>
+                <div className="story-book-page-body-layer story-book-page-body-layer--to">
+                  <div className="story-book-page-body-layer-content">
+                    <p>{pageFlip.to.content}</p>
+                    {pageFlip.to.image && (
+                      <img
+                        src={pageFlip.to.image}
+                        alt={pageFlip.to.title || "Story page image"}
+                        className="story-page-image"
+                      />
+                    )}
+                  </div>
+                </div>
+                <div className="story-book-page-body-layer story-book-page-body-layer--from">
+                  <div className="story-book-page-body-layer-content">
+                    <p>{pageFlip.from.content}</p>
+                    {pageFlip.from.image && (
+                      <img
+                        src={pageFlip.from.image}
+                        alt={pageFlip.from.title || "Story page image"}
+                        className="story-page-image"
+                      />
+                    )}
+                  </div>
+                </div>
+              </>
+            ) : (
+              <>
+                <p>{currentPage.content}</p>
+                {currentPage.image && (
+                  <img
+                    src={currentPage.image}
+                    alt={currentPage.title || "Story page image"}
+                    className="story-page-image"
+                  />
+                )}
+              </>
             )}
           </div>
 
@@ -97,13 +221,20 @@ export const StoryBook: React.FC<StoryBookProps> = ({
             <button
               className="story-book-btn ghost"
               onClick={prevPage}
-              disabled={pageIndex === 0}>
+              disabled={!!pageFlip || (pageIndex === 0 && chapterIndex === 0)}>
               Page précédente
             </button>
+            <span className="story-book-page-count">
+              Page {pageIndex + 1} / {chapter.pages.length}
+            </span>
             <button
               className="story-book-btn primary"
               onClick={nextPage}
-              disabled={pageIndex === chapter.pages.length - 1}>
+              disabled={
+                !!pageFlip ||
+                (pageIndex === chapter.pages.length - 1 &&
+                  chapterIndex === story.chapters.length - 1)
+              }>
               Page suivante
             </button>
           </div>

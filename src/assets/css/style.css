@@ -472,7 +472,7 @@ html {
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow-y: auto;
   flex-shrink: 0;
   min-height: 0;
@@ -559,6 +559,204 @@ html {
   overflow-y: auto;
   min-height: 0;
   padding-right: 8px;
+  /* background: #fffdf7; */
+}
+
+/* --- Realistic page fold animation (BODY only) --- */
+.story-book-page-body {
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1600px;
+}
+
+.story-book-page-body--flip-next,
+.story-book-page-body--flip-prev {
+  overflow: hidden; /* pendant l’anim on “fige” le scroll du body */
+  padding-right: 8px; /* conserve exactement la largeur */
+}
+
+.story-book-page-body-layer {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: transparent;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  will-change: transform, filter;
+}
+
+.story-book-page-body-layer-content {
+  height: 100%;
+  overflow: hidden;
+  padding-right: 8px;
+}
+
+/* La page qui arrive (en dessous) */
+.story-book-page-body-layer--to {
+  z-index: 1;
+  transform: none; /* ne pas transformer la nouvelle page (évite le rétrécissement) */
+  filter: brightness(0.985);
+  opacity: 1;
+}
+
+/* La page qui se plie (au-dessus) */
+.story-book-page-body-layer--from {
+  z-index: 1;
+}
+
+/* Effets “papier” + pli */
+.story-book-page-body-layer--from::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.22) 5%,
+    rgba(0, 0, 0, 0.10) 23%,
+    rgba(0, 0, 0, 0.00) 53%,
+    rgba(255, 255, 255, 0.10) 77%,
+    rgba(255, 255, 255, 0.18) 100%
+  );
+  /* background:#fff; */
+
+  opacity: 5;
+  pointer-events: none;
+}
+
+.story-book-page-body-layer--from::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 70px;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background:#fff
+    /* highlight strip */
+    /* radial-gradient(
+      circle at 55% 50%,
+      rgba(255, 255, 255, 0.55) 0%,
+      rgba(255, 255, 255, 0.18) 44%,
+      rgba(0, 0, 0, 0.00) 72%
+    ), */
+    /* paper edge line */
+   /*  linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.0) 0%,
+      rgba(255, 255, 255, 0.35) 42%,
+      rgba(0, 0, 0, 0.14) 55%,
+      rgba(0, 0, 0, 0.00) 100%
+    ); */
+}
+
+@keyframes storyBodyTurnNextFrom {
+  0% {
+    transform: rotateY(0deg) translateX(0);
+    filter: brightness(1);
+  }
+  35% {
+    transform: rotateY(-55deg) translateX(-4px);
+    filter: brightness(0.98);
+  }
+  82% {
+    transform: rotateY(-152deg) translateX(-12px);
+    filter: brightness(0.91);
+  }
+  100% {
+    transform: rotateY(-140deg) translateX(-10px);
+    filter: brightness(0.92);
+  }
+}
+
+@keyframes storyBodyRevealTo {
+  0% { filter: brightness(0.98); opacity: 0.98; }
+  100% { filter: brightness(1); opacity: 1; }
+}
+
+@keyframes storyBodyTurnPrevFrom {
+  0% {
+    transform: rotateY(0deg) translateX(0);
+    filter: brightness(1);
+  }
+  35% {
+    transform: rotateY(55deg) translateX(4px);
+    filter: brightness(0.98);
+  }
+  82% {
+    transform: rotateY(152deg) translateX(12px);
+    filter: brightness(0.91);
+  }
+  100% {
+    transform: rotateY(140deg) translateX(10px);
+    filter: brightness(0.92);
+  }
+}
+
+/* La page dessous ne bouge pas : on ne fait que la révéler légèrement */
+
+.story-book-page-body--flip-next .story-book-page-body-layer--from {
+  transform-origin: left center;
+  animation: storyBodyTurnNextFrom 650ms cubic-bezier(0.22, 0.61, 0.2, 1) forwards;
+}
+.story-book-page-body--flip-next .story-book-page-body-layer--from::before {
+  opacity: 0.95;
+}
+.story-book-page-body--flip-next .story-book-page-body-layer--from::after {
+  right: 0;
+  opacity: 0.85;
+}
+
+/* Texture papier très légère (uniquement pendant le flip) */
+.story-book-page-body--flip-next .story-book-page-body-layer--from,
+.story-book-page-body--flip-prev .story-book-page-body-layer--from {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.018) 0px,
+      rgba(0, 0, 0, 0.018) 1px,
+      rgba(255, 255, 255, 0.0) 2px,
+      rgba(255, 255, 255, 0.0) 6px
+    );
+}
+.story-book-page-body--flip-next .story-book-page-body-layer--to {
+  animation: storyBodyRevealTo 250ms ease-out both;
+}
+
+.story-book-page-body--flip-prev .story-book-page-body-layer--from {
+  transform-origin: right center;
+  animation: storyBodyTurnPrevFrom 650ms cubic-bezier(0.22, 0.61, 0.2, 1) forwards;
+}
+.story-book-page-body--flip-prev .story-book-page-body-layer--from::before {
+  opacity: 0.95;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(255, 255, 255, 0.10) 28%,
+    rgba(0, 0, 0, 0.00) 55%,
+    rgba(0, 0, 0, 0.10) 82%,
+    rgba(0, 0, 0, 0.22) 100%
+  );
+}
+.story-book-page-body--flip-prev .story-book-page-body-layer--from::after {
+  left: 0;
+  opacity: 0.85;
+}
+.story-book-page-body--flip-prev .story-book-page-body-layer--to {
+  animation: storyBodyRevealTo 250ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .story-book-page-body-layer--from,
+  .story-book-page-body-layer--to {
+    animation: none !important;
+    transform: none !important;
+  }
+  .story-book-page-body-layer--from::before,
+  .story-book-page-body-layer--from::after {
+    opacity: 0 !important;
+  }
 }
 
 .story-book-page-body p {
@@ -568,7 +766,7 @@ html {
 .story-book-page-actions {
   margin-top: 24px;
   display: flex;
-  justify-content: flex-end;
+  justify-content:space-between;
   gap: 12px;
 }
 
@@ -9865,7 +10063,7 @@ a:hover {
   }
 }
 .header .logo .image {
-  width: 100%;
+  width: 30%;
   height: 100%;
   object-fit: contain;
 }
@@ -9873,7 +10071,7 @@ a:hover {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 30%;
   height: 100%;
   z-index: 1;
 }

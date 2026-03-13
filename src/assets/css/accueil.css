@@ -91,7 +91,7 @@ a {
 }
 
 /* Timeline Container */
-.timeline-wrapper {
+.timelines-wrapper {
   position: relative;
   margin: 50px 0;
   padding: 20px 0;
@@ -99,7 +99,7 @@ a {
   white-space: nowrap;
   scrollbar-width: none;
 }
-.timeline-line {
+.timelines-line {
   position: absolute;
   top: 50px;
   left: 0;
@@ -110,11 +110,11 @@ a {
 }
 /* Tablette */
 @media (max-width: 768px) {
-  .timeline-line {
+  .timelines-line {
     width: 300%;
   }
 }
-.timeline-item {
+.timelines-item {
   display: inline-block;
   width: 280px;
   margin-right: 40px;
@@ -125,7 +125,7 @@ a {
   cursor: pointer;
   transition: 0.3s;
 }
-.timeline-dot {
+.timelines-dot {
   width: 20px;
   height: 20px;
   background: var(--benin-green);
@@ -137,7 +137,7 @@ a {
   left: 20px;
   box-shadow: 0 0 0 3px var(--benin-green);
 }
-.timeline-card {
+.timelines-card {
   background: var(--bg-cream);
   padding: 20px;
   border-radius: 15px;
@@ -146,23 +146,23 @@ a {
   box-shadow: var(--shadow);
   transition: 0.3s;
 }
-.timeline-item:hover .timeline-card {
+.timelines-item:hover .timelines-card {
   transform: translateY(-10px);
   border-color: var(--benin-red);
 }
-.timeline-year {
+.timelines-year {
   font-weight: 700;
   font-size: 1.9rem;
   color: var(--benin-green);
   display: block;
   margin-bottom: 5px;
 }
-.timeline-title {
+.timelines-title {
   font-weight: 600;
   margin-bottom: 10px;
   font-size: 1.3rem;
 }
-.timeline-content {
+.timelines-content {
   font-weight: 200;
   margin-bottom: 10px;
   font-size: 1rem;

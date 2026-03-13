@@ -193,7 +193,7 @@ export const TOURISTIC_SITES_MOCK: TouristSite[] = [
     title: "La Porte du Non-Retour",
     description:
       "Symbole poignant de la traite transatlantique, ce monument à Ouidah marque le lieu où des millions d'âmes ont quitté leur terre natale. Un lieu de mémoire inscrit au patrimoine mondial.",
-    buttonLabel: "En savoir plus",
+    buttonLabel: "Découvrir",
     imageUrl:
       "https://prod.cdn-medias.jeuneafrique.com/cdn-cgi/image/q=auto,f=auto,metadata=none,width=1215,fit=cover/https://prod.cdn-medias.jeuneafrique.com/medias/2017/04/05/ouidah_porte_non_retour_benin.jpg",
     imageAlt: "Porte du Non-Retour",
@@ -215,7 +215,7 @@ export const TOURISTIC_SITES_MOCK: TouristSite[] = [
     title: "Arène de Ouidah",
     description:
       "Vodun Days 2025 : Un spectacle grandeur nature pour son ouverture officielle.",
-    buttonLabel: "En savoir plus",
+    buttonLabel: "Découvrir",
     imageUrl:
       "https://lanation.bj/storage/assets/2025/01/elUm1oDZpZ4Q0uVz_Ar%C3%A8ne_de_OUIDAH,_Construit_dans_le_cadre_de_Vodun_Days_(3).JPG.webp",
     imageAlt: "Arène de Ouidah",

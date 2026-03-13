@@ -22,7 +22,8 @@ export const Timeline: React.FC<TimelineProps> = ({
   onSelectIndex
 }) => {
   return (
-    <section className="timeline-wrapper">
+    <section className="timeline-wrapper d-flex flex-column align-items-center">
+      <h4 className="timeline-title">Les chapitres</h4>
       <div className="timeline">
         <div className="timeline-line" />
 

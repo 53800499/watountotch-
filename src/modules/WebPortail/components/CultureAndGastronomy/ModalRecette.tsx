@@ -22,22 +22,7 @@ export const ModalRecette = ({ isOpen, onClose }: ModalRecetteProps) => {
         </div>
 
         <div className="modal-body">
-          <div className="audio-player">
-            <div className="play-btn">
-              <i className="fas fa-play"></i>
-            </div>
-
-            <div style={{ marginLeft: "10px" }}>
-              <strong>Écouter la recette (Fongbé/Français)</strong>
-
-              <div className="wave-form">
-                <div className="wave-progress"></div>
-              </div>
-            </div>
-          </div>
-
-          <br />
-
+            <div className="mb-4">Amiwo au poulet est un plat traditionnel très apprécié au Bénin. Il est préparé à base de pâte de maïs cuite dans une sauce tomate épicée, ce qui lui donne sa couleur rouge caractéristique et sa saveur riche.</div>
           <div className="recipe-grid">
             <div>
               <h4
@@ -103,12 +88,6 @@ export const ModalRecette = ({ isOpen, onClose }: ModalRecetteProps) => {
                 dans le reste du bouillon et tourner vigoureusement.
               </p>
             </div>
-          </div>
-
-          <div style={{ marginTop: "30px", textAlign: "center" }}>
-            <button className="btn-cta">
-              <i className="fas fa-shopping-basket"></i> Liste de courses
-            </button>
           </div>
         </div>
       </div>

@@ -14,26 +14,26 @@ export const HistoireSection = () => {
         )}
       </div>
 
-      <div className="timeline-wrapper">
-        <div className="timeline-line"></div>
+      <div className="timelines-wrapper">
+        <div className="timelines-line"></div>
 
         {HISTORY_TIMELINE_MOCK.map((era) => (
-          <div className="timeline-item" key={era.period}>
+          <div className="timelines-item" key={era.period}>
             <div
-              className="timeline-dot"
+              className="timelines-dot"
               style={era.dotColor ? { background: era.dotColor } : undefined}
             ></div>
 
             <div
-              className="timeline-card"
+              className="timelines-card"
               style={era.href ? { cursor: "pointer" } : undefined}
               onClick={
                 era.href ? () => (window.location.href = era.href as string) : undefined
               }
             >
-              <span className="timeline-year">{era.period}</span>
-              <h3 className="timeline-title">{era.title}</h3>
-              <p className="timeline-content">{era.description}</p>
+              <span className="timelines-year">{era.period}</span>
+              <h3 className="timelines-title">{era.title}</h3>
+              <p className="timelines-content">{era.description}</p>
 
               {era.ctaLabel && (
                 <span

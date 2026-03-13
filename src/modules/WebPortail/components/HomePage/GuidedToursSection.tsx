@@ -1,4 +1,6 @@
-import GuidedToursCard from './GuidedToursCard';
+/** @format */
+
+import GuidedToursCard from "./GuidedToursCard";
 import { guidedTours } from "../../../../common/mocks/guidedTours";
 import { WORDS } from "../../../../common/constants/wording";
 import { Link } from "react-router-dom";
@@ -6,13 +8,12 @@ import { Link } from "react-router-dom";
 export const GuidedToursSection = () => {
   return (
     <section className="news">
-      <div className="text-center pb-4" data-aos="fade-up">
-        <h3 className="title-above">
-          {WORDS.home_page.guided_tours_section.title}
-        </h3>
-        <h2 className="heading-lg">
+      <div className="section-header">
+        <h2>{WORDS.home_page.guided_tours_section.title}</h2>
+        <div className="divider"></div>
+        <h6 className="heading-lg">
           {WORDS.home_page.guided_tours_section.subtitle}
-        </h2>
+        </h6>
       </div>
 
       <div className="box-news" data-crop-images="">
