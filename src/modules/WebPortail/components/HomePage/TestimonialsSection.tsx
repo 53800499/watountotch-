@@ -23,17 +23,12 @@ export const TestimonialsSection = () => {
 
       <div className="main-testimonials pt-5 pb-5">
         <div className="section-header">
-          <h2>{WORDS.home_page.testimonial_section.title}</h2>
+          <h2 className="text-white">{WORDS.home_page.testimonial_section.title}</h2>
           <div className="divider"></div>
-            {/* <p style={{ marginTop: "10px", color: "#666" }}>{WORDS.home_page.testimonial_section.subTitle}</p>
-            <p style={{ marginTop: "5px", color: "#777", fontSize: "0.95rem" }}>
-              {WORDS.home_page.testimonial_section.description}
-            </p> */}
-          <h6 className="heading-lg text-white">
+          {/* <h6 className="heading-lg text-white">
             {WORDS.home_page.testimonial_section.subTitle}
-          </h6>
-          <p className="text-white">
-            {WORDS.home_page.testimonial_section.description}
+          </h6> */}
+<p style={{ marginTop: "15px", color: "#fff" }}>            {WORDS.home_page.testimonial_section.description}
           </p>
         </div>
 

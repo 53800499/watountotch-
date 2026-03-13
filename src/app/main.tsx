@@ -1,5 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
+import AOS from "aos";
+import "aos/dist/aos.css";
 import MainRouter from "./routes.tsx";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -13,3 +15,5 @@ createRoot(document.getElementById("root")!).render(
     <MainRouter />
   </StrictMode>
 );
+
+AOS.init({ duration: 800, once: true, offset: 120 });

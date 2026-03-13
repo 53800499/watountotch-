@@ -9,12 +9,9 @@ interface SpinnerProps {
 }
 
 export const Spinner: React.FC<SpinnerProps> = ({ fullscreen = false }) => {
-  const Wrapper: React.ComponentType<React.HTMLAttributes<HTMLDivElement>> = (
-    props
-  ) => <div {...props} />;
-
+  
   return (
-    <Wrapper
+    <div
       className={`app-spinner ${fullscreen ? "app-spinner--fullscreen" : ""}`}
     >
       <div className="app-spinner-inner">
@@ -28,7 +25,7 @@ export const Spinner: React.FC<SpinnerProps> = ({ fullscreen = false }) => {
         </div>
         <p className="app-spinner-text">Chargement de l'expérience…</p>
       </div>
-    </Wrapper>
+    </div>
   );
 };
 

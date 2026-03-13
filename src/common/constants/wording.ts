@@ -1072,3 +1072,35 @@ export const WORDS = {
   success: {},
   errors: {}
 };
+
+export const ERROR = {
+  NOT_FOUND: {
+    CODE: "404",
+    TITLE: "Page Non Trouvée",
+    DESCRIPTION:
+      "La page que vous cherchez n'existe pas ou a été déplacée. Nous vous proposons de retourner à l'accueil ou de consulter notre support.",
+    BUTTON: "Retour à l'Accueil"
+  },
+  SERVER_ERROR: {
+    CODE: "500",
+    TITLE: "Une Erreur est Survenue",
+    DESCRIPTION:
+      "Nous rencontrons un souci temporaire. Notre équipe technique travaille pour le résoudre. Réessayez dans quelques instants.",
+    BUTTON: "Réessayer"
+  },
+  UNAUTHORIZED: {
+    CODE: "401",
+    TITLE: "Accès Non Autorisé",
+    DESCRIPTION:
+      "Vous devez vous connecter à votre portefeuille pour accéder à cette page.",
+    BUTTON: "Se Connecter"
+  },
+  FORBIDDEN: {
+    CODE: "403",
+    TITLE: "Accès Refusé",
+    DESCRIPTION:
+      "Vous n'avez pas les permissions nécessaires pour accéder à cette ressource. Contactez notre support si vous croyez qu'il s'agit d'une erreur.",
+    BUTTON: "Contacter le Support"
+  },
+  CONTACT_SUPPORT: "Contacter le Support"
+};

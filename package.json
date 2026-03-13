@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/aos": "^3.0.7",
     "@types/js-cookie": "^3.0.6",
+    "aos": "^2.3.4",
     "axios": "^1.13.6",
     "bootstrap": "^5.3.8",
     "bootstrap-icons": "^1.13.1",

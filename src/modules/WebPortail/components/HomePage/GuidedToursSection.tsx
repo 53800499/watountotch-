@@ -11,9 +11,10 @@ export const GuidedToursSection = () => {
       <div className="section-header">
         <h2>{WORDS.home_page.guided_tours_section.title}</h2>
         <div className="divider"></div>
-        <h6 className="heading-lg">
+        <p style={{ marginTop: "15px", color: "#666" }}>
+          {" "}
           {WORDS.home_page.guided_tours_section.subtitle}
-        </h6>
+        </p>
       </div>
 
       <div className="box-news" data-crop-images="">

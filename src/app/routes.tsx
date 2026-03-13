@@ -20,6 +20,7 @@ import { Footer, Header } from "../modules/WebPortail/components";
 import { Spinner } from "../common/components/Spinner";
 import { ForgotPassword } from "../modules/WebPortail/pages/ForgotPassword";
 import { DestinationDetail } from "../modules/WebPortail/pages/DestinationDetail";
+import NotFound from "../modules/WebPortail/pages/NotFound";
 
 const Layout = (): React.JSX.Element => {
   const location = useLocation();
@@ -59,7 +60,7 @@ const Layout = (): React.JSX.Element => {
         <Route path="/guide-touristique" element={<TourGuide />} />
         <Route path="/guide-touristique/:id" element={<TourGuideDetail />} />
         {/* <Route element={<PrivateRoutes />}></Route> */}
-        {/* <Route path="*" element={<NotFound />} /> */}
+        <Route path="*" element={<NotFound />} />
       </Routes>
       {!shouldHideHeader && <Footer />}
     </>

@@ -1,14 +1,11 @@
 /** @format */
 
 import React from "react";
-import { PersonCard } from "./PersonCard";
-import { BACKGROUND_BEHANZIN, PROFIL_SOUROU } from "../../../../assets/images";
-
 export const Triumvirat: React.FC = () => {
   return (
     <section className="container py-5">
       {/* Title */}
-      <div className="text-center mb-5">
+      {/* <div className="text-center mb-5">
         <h3 className="fw-semibold">Le Triumvirat</h3>
 
         <div
@@ -19,10 +16,10 @@ export const Triumvirat: React.FC = () => {
             backgroundColor: "#000"
           }}
         />
-      </div>
+      </div> */}
 
       {/* Cards */}
-      <div className="row justify-content-center">
+      {/* <div className="row justify-content-center">
         <div className="col-md-4 mb-4">
           <PersonCard
             image={BACKGROUND_BEHANZIN}
@@ -46,8 +43,8 @@ export const Triumvirat: React.FC = () => {
             role="Premier Ministre"
           />
         </div>
-      </div>
-      {/* 
+      </div> */}
+      
       
       <h3
         style={{
@@ -102,7 +99,7 @@ export const Triumvirat: React.FC = () => {
           <span className="figure-role">Icône Culturelle</span>
         </div>
       </div>
-       */}
+      
     </section>
   );
 };

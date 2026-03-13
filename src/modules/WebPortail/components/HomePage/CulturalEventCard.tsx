@@ -42,7 +42,6 @@ export default function CulturalEventCard({
 
           <Button
             className="btn-decouvrir animated-btn-none"
-            variant="trial"
             onClick={onClick}>
             Découvrir
           </Button>

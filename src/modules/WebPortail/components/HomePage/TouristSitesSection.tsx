@@ -19,9 +19,9 @@ export const TouristSitesSection = () => {
             <h3 className="title-above">
               {WORDS.home_page.tourist_sites_section.title}
             </h3>
-            <h2 className="heading-lg">
+            {/* <h2 className="heading-lg">
               {WORDS.home_page.tourist_sites_section.subtitle}
-            </h2>
+            </h2> */}
             <p className="description">
               {WORDS.home_page.tourist_sites_section.description}
             </p>

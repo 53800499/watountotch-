@@ -204,7 +204,7 @@ export const Header = (): React.JSX.Element => {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <Button
+        <button
           type="button"
           className={`mobile-menu-toggle ${isMobileMenuOpen ? "active" : ""}`}
           id="mobile-menu-toggle"
@@ -212,10 +212,10 @@ export const Header = (): React.JSX.Element => {
           aria-expanded={isMobileMenuOpen}
           aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
         >
+          <span className="hamburger-line text-bg-dark"></span>
           <span className="hamburger-line"></span>
           <span className="hamburger-line"></span>
-          <span className="hamburger-line"></span>
-        </Button>
+        </button>
       </div>
     </header>
   );

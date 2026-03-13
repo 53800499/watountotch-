@@ -89,18 +89,20 @@ export const CarouselCustom: React.FC<CarouselCustomProps> = ({
                   backgroundImage: `url(${item.coverImage})`
                 }}>
                 <div className="story-card-carousel__overlay">
-                  {item.period && (
-                    <span className="story-card-carousel__period">
-                      {item.period}
+                  <div className="story-card-carousel__content">
+                    {item.period && (
+                      <span className="story-card-carousel__period">
+                        {item.period}
+                      </span>
+                    )}
+                    <h2 className="story-card-carousel__title">{item.title}</h2>
+                    {item.excerpt && (
+                      <p className="story-card-carousel__excerpt">{item.excerpt}</p>
+                    )}
+                    <span className="story-card-carousel__cta">
+                      Découvrir l'histoire →
                     </span>
-                  )}
-                  <h2 className="story-card-carousel__title">{item.title}</h2>
-                  {item.excerpt && (
-                    <p className="story-card-carousel__excerpt">{item.excerpt}</p>
-                  )}
-                  <span className="story-card-carousel__cta">
-                    Découvrir l'histoire →
-                  </span>
+                  </div>
                 </div>
               </button>
             </div>
