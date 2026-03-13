@@ -8,235 +8,147 @@ import {
 } from "../../assets/images";
 import type { StoryTest } from "../../modules/WebPortail/interfaces/StoryInterface";
 
+/**
+ * Stories historiques alignées sur la chronologie de la section Histoire (accueil).
+ * Même rôle : présenter les grandes ères qui ont forgé la nation béninoise.
+ */
 export const STORIESTEST: StoryTest[] = [
   {
-    id: "ganvie-rencontreh",
-    category: "rencontres",
-    title: "Une nuit à Ganvié, la cité lacustre",
+    id: "royaume-danxome",
+    category: "patrimoine",
+    period: "1600 - 1894",
+    title: "Royaume du Danxomè",
+    coverImage: BACKGROUND_LOGIN_B,
+    excerpt:
+      "L'époque des rois bâtisseurs, des Amazones et de l'expansion d'Abomey.",
+    chapters: [
+      {
+        id: "origines",
+        title: "Les rois bâtisseurs",
+        description: "De la fondation à l'apogée du royaume.",
+        pages: [
+          {
+            id: "p1",
+            title: "Naissance du Danxomè",
+            content:
+              "Au début du XVIIe siècle, le roi Houégbadja pose les fondations du royaume d'Abomey. Son successeur, Agaja, étend le territoire et crée une administration centralisée. Les palais royaux s'élèvent progressivement, symbolisant la puissance et le savoir-faire des artisans du royaume.",
+            image: BACKGROUND_STORY_A
+          },
+          {
+            id: "p2",
+            title: "Les Amazones du Dahomey",
+            content:
+              "Les Mino, gardes royales féminines, formaient une élite militaire redoutée. Entraînées au combat dès l'adolescence, elles protégeaient le roi et participaient aux campagnes d'expansion. Leur bravoure et leur discipline ont marqué l'histoire de l'Afrique de l'Ouest.",
+            image: BACKGROUND_LOGIN_B
+          },
+          {
+            id: "p3",
+            content:
+              "Les bas-reliefs des palais d'Abomey racontent cette histoire : guerres, rituels, vie quotidienne. Chaque roi ajoutait son palais à l'ensemble, créant un complexe unique classé au patrimoine mondial de l'UNESCO."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: "periode-coloniale",
+    category: "patrimoine",
+    period: "1894 - 1960",
+    title: "Période Coloniale",
     coverImage: BACKGROUND_LOGIN_C,
     excerpt:
-      "Une immersion au cœur de la vie paisible des villages flottants de Ganvié.",
+      "La résistance de Béhanzin, la colonisation française et les premiers mouvements d'émancipation.",
     chapters: [
       {
-        id: "arrivee",
-        title: "Arriver par les eaux",
-        description:
-          "Premiers pas au milieu des pirogues et des maisons sur pilotis.",
+        id: "resistance",
+        title: "Béhanzin et la résistance",
+        description: "Le dernier roi face à la colonisation.",
         pages: [
           {
             id: "p1",
-            title: "Traversée du lac",
+            title: "Le refus de l'occupation",
             content:
-              "Au petit matin, la surface du lac Nokoué était d’un calme presque irréel. La pirogue avançait lentement, glissant entre les nénuphars. Le guide expliquait comment les habitants avaient bâti ici une cité entière, suspendue au-dessus de l’eau. Les premières maisons sur pilotis apparurent, formant un véritable village flottant animé par les silhouettes des pêcheurs.Au petit matin, la surface du lac Nokoué était d’un calme presque irréel. La pirogue avançait lentement, glissant entre les nénuphars. Le guide expliquait comment les habitants avaient bâti ici une cité entière, suspendue au-dessus de l’eau. Les premières maisons sur pilotis apparurent, formant un véritable village flottant animé par les silhouettes des pêcheurs.Au petit matin, la surface du lac Nokoué était d’un calme presque irréel. La pirogue avançait lentement, glissant entre les nénuphars. Le guide expliquait comment les habitants avaient bâti ici une cité entière, suspendue au-dessus de l’eau. Les premières maisons sur pilotis apparurent, formant un véritable village flottant animé par les silhouettes des pêcheurs.Au petit matin, la surface du lac Nokoué était d’un calme presque irréel. La pirogue avançait lentement, glissant entre les nénuphars. Le guide expliquait comment les habitants avaient bâti ici une cité entière, suspendue au-dessus de l’eau. Les premières maisons sur pilotis apparurent, formant un véritable village flottant animé par les silhouettes des pêcheurs.Au petit matin, la surface du lac Nokoué était d’un calme presque irréel. La pirogue avançait lentement, glissant entre les nénuphars. Le guide expliquait comment les habitants avaient bâti ici une cité entière, suspendue au-dessus de l’eau. Les premières maisons sur pilotis apparurent, formant un véritable village flottant animé par les silhouettes des pêcheurs.Au petit matin, la surface du lac Nokoué était d’un calme presque irréel. La pirogue avançait lentement, glissant entre les nénuphars. Le guide expliquait comment les habitants avaient bâti ici une cité entière, suspendue au-dessus de l’eau. Les premières maisons sur pilotis apparurent, formant un véritable village flottant animé par les silhouettes des pêcheurs.",
+              "En 1890, le roi Béhanzin refuse de céder le royaume à la France. Les guerres franco-dahoméennes opposent les troupes coloniales aux armées du royaume, dont les Amazones. Malgré une résistance héroïque, Abomey tombe en 1892.",
+            image: BACKGROUND_LOGIN_C
+          },
+          {
+            id: "p2",
+            title: "La colonisation",
+            content:
+              "Le Dahomey devient colonie française. L'administration coloniale impose de nouvelles structures, transforme l'économie et introduit le système scolaire. Les élites locales s'adaptent tout en préservant traditions et cultures.",
             image: BACKGROUND_STORY_A
           },
           {
             id: "p3",
             content:
-              "Plus on avançait, plus les sons se mêlaient : les pagaies plongeant dans l’eau, des enfants riant sur les passerelles de bois, et au loin le martèlement régulier des artisans réparant leurs filets. La vie à Ganvié semblait suivre un rythme différent, fluide, presque chorégraphié par le mouvement de l’eau. Cette première approche donnait déjà l’impression d’un monde à part. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          },
-          {
-            id: "p2",
-            title: "Premières rencontres",
-            content:
-              "À l’entrée du village, une vendeuse de poissons fumés approcha la pirogue. Elle proposait son panier avec un sourire timide. Les habitants, habitués aux visiteurs, saluaient d’un geste chaleureux. Chaque maison semblait raconter une histoire : celle d’une famille, d’un métier, ou d’une tradition transmise depuis des générations. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          }
-        ]
-      },
-      {
-        id: "voix",
-        title: "Les voix de la cité flottante",
-        description: "Rencontres et témoignages des habitants de Ganvié.",
-        pages: [
-          {
-            id: "p2",
-            title: "Histoires du lac",
-            content:
-              "Assis sur une terrasse en bois, un ancien du village racontait comment ses parents avaient construit leur maison sur pilotis à une époque où l’accès au lac était plus difficile. Selon lui, chaque famille possédait un territoire invisible sur l’eau, transmis comme une terre ferme. Il décrivait aussi les fêtes traditionnelles, rythmées par les chants et les tambours qui résonnaient jusque tard dans la nuit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
+              "Dès les années 1940, les mouvements d'émancipation se structurent. L'idée d'indépendance gagne du terrain, portée par une nouvelle génération d'intellectuels et de politiques."
           }
         ]
       }
     ]
   },
   {
-    id: "ganvie-rencontree",
-    category: "rencontres",
-    title: "Une nuit à Ganvié, la cité lacustre",
-    coverImage: BACKGROUND_LOGIN_B,
-    excerpt:
-      "Découverte d’une communauté où l’eau guide chaque geste du quotidien.",
-    highlights: [
-      { label: "Naissance", chapter: 0, page: 0 },
-      { label: "Premières créations", chapter: 0, page: 2 },
-      { label: "Prix important", chapter: 1, page: 0 }
-    ],
-    chapters: [
-      {
-        id: "arrivee",
-        title: "L’entrée dans le village flottant",
-        description: "Un voyage où l’eau devient route principale.",
-        pages: [
-          {
-            id: "p1",
-            title: "Le premier embarquement",
-            content:
-              "Le soleil commençait à se refléter sur l’eau lorsque la pirogue quitta la berge. Le pilote expliquait comment lire les courants, car ici, aucune rue ne guide les visiteurs : seules les traces laissées par les barques montrent le chemin. À mesure que le village se rapprochait, on entendait les conversations provenant des terrasses suspendues.",
-            image: BACKGROUND_STORY_A
-          },
-          {
-            id: "p3",
-            content:
-              "Les enfants rentraient de l’école en pirogue, riant en éclaboussant l’eau. Les femmes, assises devant leurs maisons, préparaient le poisson tandis que la fumée montait droit dans le ciel. Ce quotidien simple mais profondément vivant donnait l’impression d’une organisation collective parfaite, façonnée par des décennies d’habitude. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          },
-          {
-            id: "p2",
-            title: "Créations artisanales",
-            content:
-              "Les artisans du village expliquaient comment ils façonnaient des objets à partir des ressources locales : nasses de pêche, pagaies sculptées, petites maquettes de maisons sur pilotis. Leur travail témoignait d’un savoir-faire précis, transmis avec fierté. Chaque objet portait une trace du lac, comme un souvenir matériel de leur environnement. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          }
-        ]
-      },
-      {
-        id: "voix",
-        title: "Portraits et récits",
-        description:
-          "Des échanges avec les habitants sur leur relation au lac.",
-        pages: [
-          {
-            id: "p2",
-            title: "La mémoire des anciens",
-            content:
-              "Un homme âgé expliquait comment le village avait évolué au fil des années. Il évoquait les périodes de pluie où le niveau de l’eau montait dangereusement, poussant les habitants à renforcer les pilotis. Il parlait aussi de la solidarité entre familles, essentielle pour vivre dans cet écosystème instable mais attachant. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "ganvie-rencontree",
-    category: "rencontres",
-    title: "Une nuit à Ganvié, la cité lacustre",
-    coverImage: BACKGROUND_LOGIN_B,
-    excerpt:
-      "Découverte d’une communauté où l’eau guide chaque geste du quotidien.",
-    highlights: [
-      { label: "Naissance", chapter: 0, page: 0 },
-      { label: "Premières créations", chapter: 0, page: 2 },
-      { label: "Prix important", chapter: 1, page: 0 }
-    ],
-    chapters: [
-      {
-        id: "arrivee",
-        title: "L’entrée dans le village flottant",
-        description: "Un voyage où l’eau devient route principale.",
-        pages: [
-          {
-            id: "p1",
-            title: "Le premier embarquement",
-            content:
-              "Le soleil commençait à se refléter sur l’eau lorsque la pirogue quitta la berge. Le pilote expliquait comment lire les courants, car ici, aucune rue ne guide les visiteurs : seules les traces laissées par les barques montrent le chemin. À mesure que le village se rapprochait, on entendait les conversations provenant des terrasses suspendues.",
-            image: BACKGROUND_STORY_A
-          },
-          {
-            id: "p3",
-            content:
-              "Les enfants rentraient de l’école en pirogue, riant en éclaboussant l’eau. Les femmes, assises devant leurs maisons, préparaient le poisson tandis que la fumée montait droit dans le ciel. Ce quotidien simple mais profondément vivant donnait l’impression d’une organisation collective parfaite, façonnée par des décennies d’habitude. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          },
-          {
-            id: "p2",
-            title: "Créations artisanales",
-            content:
-              "Les artisans du village expliquaient comment ils façonnaient des objets à partir des ressources locales : nasses de pêche, pagaies sculptées, petites maquettes de maisons sur pilotis. Leur travail témoignait d’un savoir-faire précis, transmis avec fierté. Chaque objet portait une trace du lac, comme un souvenir matériel de leur environnement. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          }
-        ]
-      },
-      {
-        id: "voix",
-        title: "Portraits et récits",
-        description:
-          "Des échanges avec les habitants sur leur relation au lac.",
-        pages: [
-          {
-            id: "p2",
-            title: "La mémoire des anciens",
-            content:
-              "Un homme âgé expliquait comment le village avait évolué au fil des années. Il évoquait les périodes de pluie où le niveau de l’eau montait dangereusement, poussant les habitants à renforcer les pilotis. Il parlait aussi de la solidarité entre familles, essentielle pour vivre dans cet écosystème instable mais attachant. Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    id: "ganvies-rencontrel",
-    category: "rencontres",
-    title: "Une nuit à Ganvié, la cité lacustre",
+    id: "independance",
+    category: "patrimoine",
+    period: "1960",
+    title: "L'Indépendance",
     coverImage: BACKGROUND_LOGIN_A,
     excerpt:
-      "Un parcours immersif au milieu des canaux et des traditions du lac Nokoué.",
+      "Le 1er Août, Hubert Maga proclame l'indépendance de la République du Dahomey.",
     chapters: [
       {
-        id: "arrivee",
-        title: "Le départ sur l’eau",
-        description:
-          "Découverte des paysages lacustres et des premières habitations.",
+        id: "proclamation",
+        title: "Le jour historique",
+        description: "Naissance de la République du Dahomey.",
         pages: [
           {
             id: "p1",
-            title: "Premiers reflets",
+            title: "Le 1er Août 1960",
             content:
-              "Le ciel légèrement brumeux donnait au lac une couleur argentée. Alors que la pirogue avançait, les reflets des maisons se déformaient au rythme de l’eau. Les pêcheurs, concentrés, manipulaient leurs filets avec une précision étonnante. Tout semblait silencieux, jusqu’à ce qu’un oiseau plonge brusquement dans l’eau.",
-            image: BACKGROUND_STORY_A
-          },
-          {
-            id: "p3",
-            content:
-              "Le village dévoilait ses ruelles d’eau, où des passerelles reliaient certaines habitations. Les enfants jouaient au bord des pilotis, observant les visiteurs avec curiosité. La vie quotidienne s’organisait dans un équilibre permanent entre traditions et adaptation aux saisons.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
+              "Hubert Maga, élu premier président, proclame l'indépendance de la République du Dahomey. La foule célèbre dans les rues de Porto-Novo et Cotonou. Après des décennies de colonisation, le pays retrouve sa souveraineté.",
+            image: BACKGROUND_LOGIN_A
           },
           {
             id: "p2",
-            title: "Un mode de vie unique",
+            title: "Un nouveau départ",
             content:
-              "Les habitants parlaient avec fierté de leur histoire. Ils expliquaient comment, jadis, le peuple Tofinou avait trouvé refuge sur le lac pour échapper à des conflits. De cette décision est née une cité complète, construite pour et avec l’eau. Aujourd’hui encore, chaque nouvelle maison est un travail collectif, impliquant plusieurs familles.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
+              "La jeune république hérite des frontières coloniales et doit construire ses institutions. Les années qui suivent verront des alternances politiques et des efforts pour unifier un territoire aux identités multiples.",
+            image: BACKGROUND_LOGIN_B
           }
         ]
       }
     ]
   },
   {
-    id: "ganvies-rencontrel",
-    category: "rencontres",
-    title: "Une nuit à Ganvié, la cité lacustre",
-    coverImage: BACKGROUND_LOGIN_A,
+    id: "conference-nationale",
+    category: "patrimoine",
+    period: "1990",
+    title: "Conférence Nationale",
+    coverImage: BACKGROUND_LOGIN_B,
     excerpt:
-      "Un parcours immersif au milieu des canaux et des traditions du lac Nokoué.",
+      "Le renouveau démocratique et l'établissement de la constitution actuelle.",
     chapters: [
       {
-        id: "arrivee",
-        title: "Le départ sur l’eau",
-        description:
-          "Découverte des paysages lacustres et des premières habitations.",
+        id: "renouveau",
+        title: "La Conférence des Forces vives",
+        description: "Une transition pacifique vers la démocratie.",
         pages: [
           {
             id: "p1",
-            title: "Premiers reflets",
+            title: "Février 1990",
             content:
-              "Le ciel légèrement brumeux donnait au lac une couleur argentée. Alors que la pirogue avançait, les reflets des maisons se déformaient au rythme de l’eau. Les pêcheurs, concentrés, manipulaient leurs filets avec une précision étonnante. Tout semblait silencieux, jusqu’à ce qu’un oiseau plonge brusquement dans l’eau.",
-            image: BACKGROUND_STORY_A
-          },
-          {
-            id: "p3",
-            content:
-              "Le village dévoilait ses ruelles d’eau, où des passerelles reliaient certaines habitations. Les enfants jouaient au bord des pilotis, observant les visiteurs avec curiosité. La vie quotidienne s’organisait dans un équilibre permanent entre traditions et adaptation aux saisons.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
+              "La Conférence nationale des Forces vives de la nation réunit représentants de la société civile, partis politiques et syndicats. Elle décide de la fin du régime marxiste-léniniste et pose les bases d'une transition démocratique.",
+            image: BACKGROUND_LOGIN_C
           },
           {
             id: "p2",
-            title: "Un mode de vie unique",
+            title: "Une nouvelle constitution",
             content:
-              "Les habitants parlaient avec fierté de leur histoire. Ils expliquaient comment, jadis, le peuple Tofinou avait trouvé refuge sur le lac pour échapper à des conflits. De cette décision est née une cité complète, construite pour et avec l’eau. Aujourd’hui encore, chaque nouvelle maison est un travail collectif, impliquant plusieurs familles.Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur voluptatibus doloribus officia, hic provident tempore ex corporis ducimus aperiam in perferendis sint modi quod excepturi ipsam aspernatur, repudiandae labore? Quod non ducimus vitae, quam esse eos laudantium sint praesentium repellat ullam dolorem omnis fuga et cupiditate illo eligendi quisquam corporis dicta debitis aut. Excepturi enim quibusdam, at optio vitae similique alias, aut consectetur ducimus unde magni quod. Velit, nisi illo at minus ex, mollitia sunt vero quos fuga doloribus, quas aut? Similique cum quas magni tempora porro distinctio qui sapiente nemo. Consequatur, eos facere officia officiis, earum temporibus eaque ullam maxime vero veniam dignissimos velit unde. Nostrum eum fuga fugit nam, temporibus modi suscipit animi sed consectetur! Amet quasi, id aliquid nemo unde recusandae optio cupiditate ea culpa perferendis nihil, repudiandae magni cum hic veritatis obcaecati earum. Ipsam id eum illum repudiandae itaque labore ea. Perferendis voluptatem alias deleniti ad?"
+              "La Constitution de décembre 1990 instaure un régime présidentiel, le multipartisme et garantit les libertés fondamentales. Le Bénin devient un modèle de transition démocratique en Afrique.",
+            image: BACKGROUND_STORY_A
           }
         ]
       }
     ]
   }
 ];
-

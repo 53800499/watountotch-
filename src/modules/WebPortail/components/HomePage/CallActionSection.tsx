@@ -36,20 +36,15 @@ export const CallActionSection: React.FC<CallActionInterface> = ({
           {text}
         </p>
 
-        {ctaHref ? (
+        {ctaHref ?
           <Link
             to={ctaHref}
             {...ctaProps}
             target={openInNewTab ? "_blank" : undefined}
-            rel={openInNewTab ? "noopener noreferrer" : undefined}
-            data-aos="fade-up">
+            rel={openInNewTab ? "noopener noreferrer" : undefined}>
             {ctaLabel}
           </Link>
-        ) : (
-          <Button type="button" {...ctaProps} data-aos="fade-up">
-            {ctaLabel}
-          </Button>
-        )}
+        : <Button className="btn animated-btn">{ctaLabel}</Button>}
       </div>
     </div>
   );

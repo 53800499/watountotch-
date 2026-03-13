@@ -39,6 +39,7 @@ export interface Chapter {
 export interface StoryTest {
   id: string;
   category: "rencontres" | "patrimoine" | "spirituel" | "nature";
+  period?: string;
   title: string;
   author?: string;
   readTime?: string;

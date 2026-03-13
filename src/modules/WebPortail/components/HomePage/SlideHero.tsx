@@ -1,5 +1,6 @@
 /** @format */
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Button } from "../../../../common/components";
 
 export interface Slide {
   country: string;
@@ -305,9 +306,12 @@ export default function SlideHero({ slides: initSlides, config = {} }: Props) {
                 <h1 className="subtitle">{slides[displayIndex]?.city}</h1>
                 <p className="text">{slides[displayIndex]?.text}</p>
                 {slides[displayIndex]?.button && (
-                  <a href={slides[displayIndex]!.button!.link} className="btn">
+                                    <Button className="btn animated-btn">
+                  
+                  <a href={slides[displayIndex]!.button!.link} className="text-white">
                     {slides[displayIndex]!.button!.label}
                   </a>
+                </Button>
                 )}
               </div>
             </div>

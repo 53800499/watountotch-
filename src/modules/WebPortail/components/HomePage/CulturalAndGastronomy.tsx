@@ -78,7 +78,7 @@ export const CultureGastroSection = () => {
 
                 <div className="text-start">
                   <button
-                    className="btn-outline2"
+                    className="btn animated-btn text-black"
                     style={{ flex: 1, }}
                     onClick={() => setOpen(true)}
                   >

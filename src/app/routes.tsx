@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import {
   Event,
@@ -17,18 +17,30 @@ import {
   TourGuideDetail
 } from "../modules/WebPortail/pages";
 import { Footer, Header } from "../modules/WebPortail/components";
+import { Spinner } from "../common/components/Spinner";
 import { ForgotPassword } from "../modules/WebPortail/pages/ForgotPassword";
 import { DestinationDetail } from "../modules/WebPortail/pages/DestinationDetail";
 
 const Layout = (): React.JSX.Element => {
   const location = useLocation();
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const hideHeaderRoutes = ["/destination-detail/:id"];
   const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
 
+  useEffect(() => {
+    setIsTransitioning(true);
+    const timeout = window.setTimeout(() => {
+      setIsTransitioning(false);
+    }, 400);
+    return () => window.clearTimeout(timeout);
+  }, [location.pathname]);
+
   return (
     <>
+      {isTransitioning && <Spinner fullscreen />}
       {!shouldHideHeader && <Header />}
+      
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/accueil" element={<Home />} />

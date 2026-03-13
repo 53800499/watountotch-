@@ -2,7 +2,7 @@
 import React from "react";
 import type { StoryBookProps } from "../interfaces/StoryInterface";
 import { Timeline } from "../components/StoriesPage/Timeline";
-import { AudioLines } from "lucide-react";
+import { AudioLines, Play, Pause } from "lucide-react";
 import { timelineData } from "../../../common/mocks";
 
 export const StoryBook: React.FC<StoryBookProps> = ({
@@ -16,6 +16,8 @@ export const StoryBook: React.FC<StoryBookProps> = ({
   const pageBodyRef = React.useRef<HTMLDivElement | null>(null);
   const [showTimelineModal, setShowTimelineModal] = React.useState(false);
   const [showChaptersModal, setShowChaptersModal] = React.useState(false);
+  const [showAudioModal, setShowAudioModal] = React.useState(false);
+  const [isPlaying, setIsPlaying] = React.useState(false);
   const [pageFlip, setPageFlip] = React.useState<{
     direction: "next" | "prev";
     toChapterIndex: number;
@@ -243,7 +245,10 @@ export const StoryBook: React.FC<StoryBookProps> = ({
 
       <aside className="story-book-right">
         <div className="story-options">
-          <button className="option-btn audio-btn">
+          <button
+            className="option-btn audio-btn"
+            onClick={() => setShowAudioModal(true)}
+            title="Simulation lecture audio">
             <span className="audio-btn-text">Lecture Audio</span>
             <AudioLines className="audio-btn-icon" />
           </button>
@@ -312,6 +317,63 @@ export const StoryBook: React.FC<StoryBookProps> = ({
                   setShowChaptersModal(false);
                 }}
               />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Audio Simulation Modal */}
+      {showAudioModal && (
+        <div
+          className="story-book-modal-overlay active"
+          onClick={() => setShowAudioModal(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="audio-modal-title"
+          onKeyDown={(e) => {
+            if (e.key === "Escape") {
+              setShowAudioModal(false);
+            }
+          }}>
+          <div
+            className="story-book-modal story-book-modal--audio"
+            onClick={(e) => e.stopPropagation()}
+            role="document">
+            <div className="story-book-modal-header">
+              <h3 id="audio-modal-title">Lecture audio</h3>
+              <button
+                className="story-book-modal-close"
+                onClick={() => setShowAudioModal(false)}
+                aria-label="Fermer le modal">
+                ✕
+              </button>
+            </div>
+            <div className="story-book-modal-content story-book-modal-content--audio">
+              <p className="story-book-audio-intro">
+                Écoutez la narration de cette histoire : {currentPage.title || story.title}
+              </p>
+              <div className="audio-player story-book-audio-player">
+                <button
+                  type="button"
+                  className="play-btn story-book-play-btn"
+                  onClick={() => setIsPlaying(!isPlaying)}
+                  aria-label={isPlaying ? "Pause" : "Lecture"}
+                  title={isPlaying ? "Pause" : "Lecture"}>
+                  {isPlaying ? (
+                    <Pause size={20} strokeWidth={2.5} />
+                  ) : (
+                    <Play size={20} strokeWidth={2.5} className="play-icon-offset" />
+                  )}
+                </button>
+                <div className="wave-form story-book-wave-form">
+                  <div
+                    className={`wave-progress story-book-wave-progress${isPlaying ? " story-book-wave-progress--playing" : ""}`}
+                  />
+                </div>
+              </div>
+              <p className="story-book-audio-note">
+                Simulation de lecture audio — aucune piste audio n&apos;est actuellement chargée.
+              </p>
             </div>
           </div>
         </div>

@@ -1,0 +1,113 @@
+/**
+ * Variantes du composant Button – harmonisées et ergonomiques
+ * S'appuie sur les variables CSS du projet (style.css, auth.css)
+ */
+
+/* Base commune – ergonomie */
+.btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  min-height: 44px; /* zone tactile minimale pour l'ergonomie */
+  border: none;
+  border-radius: 14px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease,
+    color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-base:focus-visible {
+  outline: 2px solid var(--color-primary, #0077b6);
+  outline-offset: 2px;
+}
+
+.btn-base:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-base.btn-full-width {
+  width: 100%;
+}
+
+/* Variant 1 – Primary (gradient, action principale) */
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    var(--btn-gradient-start, #1d3557),
+    var(--btn-gradient-end, #0a69ed)
+  );
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.25);
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(99, 102, 241, 0.35);
+  background: linear-gradient(
+    135deg,
+    var(--btn-hover-start, #0a69ed),
+    var(--btn-hover-end, #1d3557)
+  );
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Variant 2 – Secondary (outline, action secondaire) */
+.btn-secondary {
+  background: transparent;
+  color: var(--color-primary, #0077b6);
+  border: 2px solid var(--color-primary, #0077b6);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: rgba(0, 119, 182, 0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.2);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Variant 3 – Soft (fond clair, discret mais visible) */
+.btn-soft {
+  background: var(--color-surface-mcase, #e9f6ff);
+  color: var(--color-primary-dark, #023e8a);
+}
+
+.btn-soft:hover:not(:disabled) {
+  background: var(--color-primary-light, #90e0ef);
+  color: var(--color-primary-dark, #023e8a);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 119, 182, 0.15);
+}
+
+.btn-soft:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Variant 4 – Ghost (subtile, navigation / liens d’action légers) */
+.btn-ghost {
+  background: transparent;
+  color: var(--color-primary, #0077b6);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: rgba(0, 119, 182, 0.06);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:active:not(:disabled) {
+  transform: translateY(0);
+  background: rgba(0, 119, 182, 0.1);
+}

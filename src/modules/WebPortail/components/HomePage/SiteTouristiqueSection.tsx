@@ -1,8 +1,10 @@
+/** @format */
+
 import { WORDS } from "../../../../common/constants/wording";
 import { TOURISTIC_SITES_MOCK } from "../../../../common/mocks/home_page";
 
 export const SiteTouristiqueSection = () => {
-  const { title/* , subtitle, description */, button_text } =
+  const { title /* , subtitle, description */, button_text } =
     WORDS.home_page.tourist_sites_section;
 
   return (
@@ -10,7 +12,8 @@ export const SiteTouristiqueSection = () => {
       <section id="sites-touristiques">
         <div className="section-header">
           <h2>{title}</h2>
-          <div className="divider"></div>{/* 
+          <div className="divider"></div>
+          {/* 
           {subtitle && (
             <p style={{ marginTop: "10px", color: "#666" }}>{subtitle}</p>
           )}
@@ -31,9 +34,7 @@ export const SiteTouristiqueSection = () => {
 
               <a
                 href={site.href ?? "#"}
-                className="btn-cta"
-                style={{ background: "var(--benin-green)" }}
-              >
+                className="btn animated-btn text-black">
                 {site.buttonLabel}
               </a>
             </div>
@@ -49,29 +50,25 @@ export const SiteTouristiqueSection = () => {
 
           return (
             <div className="history-grid" key={site.title}>
-              {isImageLeft ? (
+              {isImageLeft ?
                 <>
                   {ImageBlock}
                   {TextBlock}
                 </>
-              ) : (
-                <>
+              : <>
                   {TextBlock}
                   {ImageBlock}
                 </>
-              )}
+              }
             </div>
           );
         })}
 
-        
-            <a
-              href="/sites-touristiques"
-              className="btn-cta"
-              style={{ background: "var(--benin-green)" }}
-            >
-              {button_text}
-            </a>
+        <div className="d-flex justify-center">
+          <a href="/sites-touristiques" className="btn animated-btn text-black">
+            {button_text}
+          </a>
+        </div>
       </section>
     </>
   );
