@@ -11313,42 +11313,60 @@ a:hover {
   flex-wrap: nowrap;
   gap: 10px;
 }
-@media (max-width: 576px) {
-  .site-footer .footer-brand {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -webkit-flex-direction: column;
-    -moz-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-box-pack: center;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-    -webkit-flex-wrap: nowrap;
-    -moz-flex-wrap: nowrap;
-    -ms-flex-wrap: nowrap;
-    flex-wrap: nowrap;
+/* TABLETTE */
+@media (max-width: 992px) {
+  .site-footer .footer-container {
+    gap: 2rem;
+  }
+
+  .site-footer .footer-brand .logo {
+    width: 60%;
   }
 }
-.site-footer .footer-brand .logo {
-  position: relative;
-  width: 75%;
-}
+
+/* MOBILE */
 @media (max-width: 576px) {
-  .site-footer .footer-brand .logo {
-    width: 50%;
+
+  .site-footer {
+    padding: 2rem 0 0;
+  }
+
+  .site-footer .footer-container {
+    /* text-align: center; */
+    gap: 2rem;
+  }
+
+  /* texte logo */
+  .site-footer .footer-brand .tagline {
+    max-width: 100%;
+  }
+
+  /* newsletter */
+  .site-footer .footer-newsletter .newsletter-form {
+    flex-direction: row;
+    /* gap: 10px; */
+    width: 100%;
+  }
+
+  .site-footer .footer-newsletter .newsletter-form input {
+    min-width: 70%;
+    border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -ms-border-radius: 0.5rem;
+    -o-border-radius: 0.5rem;
+}
+
+  .site-footer .footer-newsletter .newsletter-form button {
+    border-radius: 0.5rem;
+    /*width: 100%;
+    */  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+}
+
+  /* réseaux sociaux */
+  .site-footer .footer-newsletter .footer-social {
+    justify-content: center;
   }
 }
 .site-footer .footer-brand .logo .image {

@@ -23,7 +23,7 @@ import { DestinationDetail } from "../modules/WebPortail/pages/DestinationDetail
 const Layout = (): React.JSX.Element => {
   const location = useLocation();
 
-  const hideHeaderRoutes = ["/", "/destination-detail/:id"];
+  const hideHeaderRoutes = ["/destination-detail/:id"];
   const shouldHideHeader = hideHeaderRoutes.includes(location.pathname);
 
   return (
